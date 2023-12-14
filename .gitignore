@@ -1,0 +1,21 @@
+# Automake
+/autom4te.cache
+/m4
+/build
+ar-lib
+config.log
+config.sub
+config.guess
+compile
+configure
+config.status
+aclocal.m4
+install-sh
+depcomp
+missing
+test-driver
+ltmain.sh
+**/Makefile.in
+**/Makefile
+**/*.o
+**/.deps
