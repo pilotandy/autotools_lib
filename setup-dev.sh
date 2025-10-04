@@ -28,6 +28,13 @@ sed -i "s/<library>/$LIBRARY_NAME/g" configure.ac
 sed -i "s/<email>/$EMAIL/g" configure.ac
 
 if [ -z "$3" ]; then
+  # Rebuild setup-dev.sh
+  echo "autoreconf --install" > setup-dev.sh
+  echo "mkdir -p build" >> setup-dev.sh
+  echo "pushd build" >> setup-dev.sh
+  echo "CXXFLAGS=\"-g -O0\" ../configure" >> setup-dev.sh
+  echo "popd" >> setup-dev.sh
+
   # Delete git and treat as new project
   git remote remove origin
   rm -rf .git
