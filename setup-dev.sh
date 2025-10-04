@@ -15,9 +15,9 @@ EMAIL="$2";
 
 # Change the src files
 sed -i "s/<library>/$LIBRARY_NAME/g" src/Makefile.am
-mv src/library.h $LIBRARY_NAME.h
+mv src/library.h src/$LIBRARY_NAME.h
 sed -i "s/<library>/$LIBRARY_NAME/g" src/library.cpp
-mv src/library.cpp $LIBRARY_NAME.cpp
+mv src/library.cpp src/$LIBRARY_NAME.cpp
 
 # Change the tests files
 sed -i "s/<library>/$LIBRARY_NAME/g" tests/Makefile.am
