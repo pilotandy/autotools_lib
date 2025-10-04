@@ -13,6 +13,15 @@ fi
 LIBRARY_NAME="$1";
 EMAIL="$2";
 
+if [ -z "$3" ]; then
+  # Delete git and treat as new project
+  git remote remove origin
+  rm -rf .git
+  git init
+  git add .
+  git commit -m "Initial commit for project: $LIBRARY_NAME"
+fi
+
 # Change the src files
 sed -i "s/<library>/$LIBRARY_NAME/g" src/Makefile.am
 mv src/library.h src/$LIBRARY_NAME.h
