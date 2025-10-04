@@ -14,18 +14,18 @@ LIBRARY_NAME="$1";
 EMAIL="$2";
 
 # Change the src files
-sed -i "s/<library>/$LIBRARY_NAME/" src/Makefile.am
+sed -i "s/<library>/$LIBRARY_NAME/g" src/Makefile.am
 mv src/library.h $LIBRARY_NAME.h
-sed -i "s/<library>/$LIBRARY_NAME/" src/library.cpp
+sed -i "s/<library>/$LIBRARY_NAME/g" src/library.cpp
 mv src/library.cpp $LIBRARY_NAME.cpp
 
 # Change the tests files
-sed -i "s/<library>/$LIBRARY_NAME/" tests/Makefile.am
-sed -i "s/<library>/$LIBRARY_NAME/" tests/test.cpp
+sed -i "s/<library>/$LIBRARY_NAME/g" tests/Makefile.am
+sed -i "s/<library>/$LIBRARY_NAME/g" tests/test.cpp
 
 # Change the configure.ac
-sed -i "s/<library>/$LIBRARY_NAME/" configure.ac
-sed -i "s/<email>/$EMAIL/" configure.ac
+sed -i "s/<library>/$LIBRARY_NAME/g" configure.ac
+sed -i "s/<email>/$EMAIL/g" configure.ac
 
 autoreconf --install
 mkdir -p build
