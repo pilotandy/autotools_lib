@@ -1,5 +1,5 @@
-lib_LTLIBRARIES = liblibrary.la
-liblibrary_la_SOURCES = library.cpp
-liblibrary_includedir = $(includedir)
-liblibrary_include_HEADERS = library.h
-liblibrary_la_CXXFLAGS = -Wall -Werror -std=c++17 -fPIC -shared
+lib_LTLIBRARIES = lib<library>.la
+lib<library>_la_SOURCES = <library>.cpp
+lib<library>_includedir = $(includedir)
+lib<library>_include_HEADERS = <library>.h
+lib<library>_la_CXXFLAGS = -Wall -Werror -std=c++17 -fPIC -shared
