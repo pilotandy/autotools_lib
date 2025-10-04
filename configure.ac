@@ -1,5 +1,5 @@
 AC_PREREQ([2.69])
-AC_INIT([library], [1.0.0], [email@example.com])
+AC_INIT([<library>], [1.0.0], [<email>])
 
 AC_CONFIG_MACRO_DIRS([m4])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
